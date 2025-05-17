@@ -3,27 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tic Tac Toe: Ultimate Edition</title>
+  <title>Tic Tac Toe</title>Ultimate Edition<title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1 class="game-title">Tic Tac Toe: <span>Ultimate Edition</span></h1>
-
-  <div class="mode-buttons">
-    <button onclick="startGame('ai')">Play vs AI</button>
-    <button onclick="startGame('1v1')">Play 1v1</button>
-    <button onclick="restartGame()">Restart</button>
+  <h1>Tic Tac Toe</h1>
+  <div class="board" id="board">
+    <!-- 9 cells -->
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
   </div>
 
-  <div class="board" id="board"></div>
-
-  <div id="result" class="hidden">
-    <p id="result-text"></p>
-    <button onclick="restartGame()">Play Again</button>
+  <!-- Winning/Draw Message -->
+  <div id="message" class="message hide">
+    <p id="message-text"></p>
+    <button id="restartButton">Restart</button>
   </div>
 
-  <audio id="move-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1307b7f7f7.mp3"></audio>
-  <audio id="win-sound" src="https://cdn.pixabay.com/download/audio/2021/09/01/audio_c8ecb6edb5.mp3"></audio>
+  <!-- Sound effects -->
+  <audio id="winSound" src="win.mp3" preload="auto"></audio>
+  <audio id="loseSound" src="lose.mp3" preload="auto"></audio>
+  <audio id="drawSound" src="draw.mp3" preload="auto"></audio>
 
   <script src="script.js"></script>
 </body>
