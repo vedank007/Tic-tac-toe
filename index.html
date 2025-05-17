@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tic Tac Toe: Ultimate Edition</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1 class="game-title">Tic Tac Toe: <span>Ultimate Edition</span></h1>
+
+  <div class="mode-buttons">
+    <button onclick="startGame('ai')">Play vs AI</button>
+    <button onclick="startGame('1v1')">Play 1v1</button>
+    <button onclick="restartGame()">Restart</button>
+  </div>
+
+  <div class="board" id="board"></div>
+
+  <div id="result" class="hidden">
+    <p id="result-text"></p>
+    <button onclick="restartGame()">Play Again</button>
+  </div>
+
+  <audio id="move-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1307b7f7f7.mp3"></audio>
+  <audio id="win-sound" src="https://cdn.pixabay.com/download/audio/2021/09/01/audio_c8ecb6edb5.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
