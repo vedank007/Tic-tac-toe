@@ -20,7 +20,13 @@
   <div id="result" class="hidden">
     <p id="result-text"></p>
     <button onclick="restartGame()">Play Again</button>
-  </div>
+<button id="restart">Restart</button>
+  
+<audio id="x-win" src="sounds/x-win.mp3"></audio>
+<audio id="o-win" src="sounds/o-win.mp3"></audio>
+<audio id="draw" src="sounds/draw.mp3"></audio>
+
+<div id="winner-banner" style="display:none; font-size:24px; text-align:center;"></div>
 
   <audio id="move-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1307b7f7f7.mp3"></audio>
   <audio id="win-sound" src="https://cdn.pixabay.com/download/audio/2021/09/01/audio_c8ecb6edb5.mp3"></audio>

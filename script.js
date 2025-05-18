@@ -61,6 +61,14 @@ function handleCellClick(index) {
       currentPlayer = "❌";
     }, 300);
   }
+}if (checkWin()) {
+    showBanner(currentPlayer + " wins!");
+    playSound(currentPlayer === "X" ? "x-win" : "o-win");
+    gameActive = false;
+} else if (!gameState.includes("")) {
+    showBanner("It's a Draw!");
+    playSound("draw");
+    gameActive = false;
 }
 
 function aiMove() {
@@ -135,3 +143,27 @@ function gameOver(message) {
 }
 
 startGame('1v1');
+document.getElementById("restart").addEventListener("click", restartGame);
+
+function restartGame() {
+    currentPlayer = "X";
+    gameActive = true;
+    document.getElementById("winner-banner").style.display = "none";
+    cells.forEach(cell => {
+        cell.textContent = "";
+        cell.classList.remove("win");
+    });
+    gameState = ["", "", "", "", "", "", "", "", ""];
+}
+function showBanner(message) {
+    const banner = document.getElementById("winner-banner");
+    banner.textContent = message;
+    banner.style.display = "block";
+}
+function playSound(id) {
+    const audio = document.getElementById(id);
+    if (audio) {
+        audio.currentTime = 0;
+        audio.play();
+    }
+}
